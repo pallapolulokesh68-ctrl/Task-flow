@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <h1>TaskFlow</h1>
+            <p>Organize your work. Manage your time. Achieve more.</p>
+        </header>
+
+        <!-- AUTHENTICATION SECTION -->
+        <section id="authSection" class="auth-section">
+
+            <h2>Welcome to TaskFlow</h2>
+            <p>Register or login to manage your tasks.</p>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                >
+            </div>
+
+            <div class="auth-buttons">
+                <button id="registerBtn">Register</button>
+                <button id="loginBtn">Login</button>
+            </div>
+
+            <p id="authMessage"></p>
+
+        </section>
+
+        <!-- TASK SECTION -->
+        <section id="taskSection" style="display: none;">
+
+            <!-- USER BAR -->
+            <div class="user-bar">
+                <h2 id="welcomeUser">Welcome!</h2>
+                <button id="logoutBtn">Logout</button>
+            </div>
+
+            <!-- ADD TASK FORM -->
+            <div class="task-form">
+
+                <h2>Add New Task</h2>
+
+                <div class="form-group">
+                    <label for="taskTitle">Task Title</label>
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="Enter task title"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="taskDescription">Description</label>
+                    <textarea
+                        id="taskDescription"
+                        placeholder="Enter task description"
+                    ></textarea>
+                </div>
+
+                <!-- TASK STATUS -->
+                <div class="form-group">
+                    <label for="taskStatus">Status</label>
+                    <select id="taskStatus">
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+
+                <!-- TASK PRIORITY -->
+                <div class="form-group">
+                    <label for="taskPriority">Priority</label>
+                    <select id="taskPriority">
+                        <option value="Medium" selected>Medium</option>
+                        <option value="High">High</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+
+                <!-- TASK DUE DATE -->
+                <div class="form-group">
+                    <label for="taskDueDate">Due Date</label>
+                    <input
+                        type="date"
+                        id="taskDueDate"
+                    >
+                </div>
+
+                <button id="addTaskBtn">Add Task</button>
+
+                <p id="taskMessage"></p>
+
+            </div>
+
+            <!-- TASK SUMMARY DASHBOARD -->
+            <div class="task-summary">
+
+                <div class="summary-card">
+                    <h3>Total Tasks</h3>
+                    <p id="totalTasks">0</p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Pending</h3>
+                    <p id="pendingTasks">0</p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>In Progress</h3>
+                    <p id="inProgressTasks">0</p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Completed</h3>
+                    <p id="completedTasks">0</p>
+                </div>
+
+                <!-- OVERDUE TASKS -->
+                <div class="summary-card overdue-summary">
+                    <h3>Overdue Tasks</h3>
+                    <p id="overdueTasks">0</p>
+                </div>
+
+            </div>
+
+            <!-- SEARCH, FILTER AND SORT -->
+            <div class="task-tools">
+
+                <!-- SEARCH -->
+                <input
+                    type="text"
+                    id="taskSearch"
+                    placeholder="Search by task title or description..."
+                >
+
+                <!-- STATUS FILTER -->
+                <select id="taskFilter">
+                    <option value="All">All Tasks</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+
+                <!-- TASK SORTING -->
+                <select id="taskSort">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="dueDate">Due Date</option>
+                    <option value="priority">Priority</option>
+                </select>
+
+            </div>
+
+            <!-- TASK LIST -->
+            <div class="task-list-section">
+
+                <h2>My Tasks</h2>
+
+                <div id="taskList">
+                    <!-- Tasks will be displayed dynamically -->
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
